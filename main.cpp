@@ -16,22 +16,11 @@ int main() {
 
     // reads the header and prints it
     string row1;
+    //skip header
     getline(dataset, row1);
-    cout << row1 << endl;
-
-    // reads the selected column and prints it
-    string line;
-    while (getline(dataset, line)) {
-        stringstream ss(line);
-        string column;
-        int columnIndex = 0;
-        while (getline(ss, column, ',')) {
-            if (columnIndex == 4) {   // change the number to select a different column
-                cout << column << endl;
-            }
-            columnIndex++;
-        }
-    }
-
+    //first line
+    getline(dataset, row1);
+    Entry entry1 = Entry(row1);
+    entry1.printData();
 
 }
