@@ -6,6 +6,30 @@
 #include "Graph.h"
 using namespace std;
 
+vector<Entry> testLoad(ifstream& dataset) {
+    vector<Entry> data;
+    string row;
+    //skip header
+    getline(dataset, row);
+    //state -> # of cases
+    map<string,int> state_count;
+    //go through whole dataset and pick at most 2200 cases from each state
+    while (getline(dataset, row)) {
+        Entry entry(row);
+        int max_cases = 2200;
+        if (state_count.find(entry.state) == state_count.end()) {
+            state_count[entry.state] = 1;
+            data.push_back(entry);
+        }
+        else if (state_count[entry.state] < max_cases) {
+            state_count[entry.state]++;
+            data.push_back(entry);
+        }
+    }
+    //return vector of entries
+    return data;
+}
+
 int main() {
     //open dataset (i haven't pushed it yet but it would be in this directory if it was pushed)
     ifstream dataset("archive/US_Accidents_March23.csv");
@@ -23,23 +47,9 @@ int main() {
     Entry entry1 = Entry(row);
     // entry1.printData();
 
-    // Uses the first 100,001 rows of the dataset
-    int rowCount = 0;
-    const int maxRows = 100001;
-
-
     map<string, pair<int, int>> stateInfo;
     map<string, map<string, pair<int, int>>> adjList;
-    vector<Entry> entries;
-
-    // Read and parse each line in the dataset
-    while (getline(dataset, row) && rowCount < maxRows) {
-        Entry entry(row);
-        if (!entry.state.empty() && entry.severity > 0) {
-            entries.push_back(entry);
-            rowCount++;
-        }
-    }
+    vector<Entry> entries = testLoad(dataset);
     
     // Get the total severity and entry count for each state
     for (const auto& entry : entries) {
