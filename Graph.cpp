@@ -66,4 +66,4 @@ void Entry::printData(){
   cout << "County: " << this->county << endl;
   cout << "State: " << this->state << endl;
   cout << "Zip: " << this->zip << endl;
- }
+}
