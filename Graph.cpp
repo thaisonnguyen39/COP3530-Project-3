@@ -1,8 +1,5 @@
 #include "Graph.h"
-
-#include <limits>
 #include <sstream>
-
 //parameterized constructor parses a line from the database and stores the data in member variables
 Entry::Entry(string line){
     istringstream iss(line);
@@ -70,7 +67,7 @@ Edge::Edge(Entry &from, Entry &to, long double weight) {
 long double Graph::getWeight(Entry from, Entry to) {
     return sqrt(pow(to.start_lat - from.start_lat, 2) + pow(to.start_lng - from.start_lng, 2));
 }
-//inserts an traffic case to its respective vector in the table
+//inserts a traffic case to its respective vector in the table
 void Graph::insertTable(Entry entry) {
     this->state_table[entry.state].push_back(entry);
 }
@@ -79,8 +76,6 @@ vector<Edge> Graph::buildGraph(string state) {
     vector<Edge> graph; //vector of edges, each entry contains a pair<first, second> and a weight
     vector<Entry> state_data = state_table[state];
     Entry home_vertex = state_data[0];
-    long double weight;
-    long double min_weight;
     //for each entry
     for (int i = 1; i < state_data.size(); i++) {
         Entry new_vertex = state_data[i];

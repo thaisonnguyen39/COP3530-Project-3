@@ -12,8 +12,8 @@ vector<Entry> loadFileData(ifstream& dataset, Graph &graph) {
     getline(dataset, row);
     //state -> # of cases
     map<string,int> state_count;
-    //go through whole dataset and pick at most 2200 cases from each state
-    int max_cases = 2500;
+    //go through whole dataset and pick at most max_cases cases from each state
+    int max_cases = 250;
     while (getline(dataset, row)) {
         Entry entry(row);
         if (state_count.find(entry.state) == state_count.end()) {
@@ -78,7 +78,7 @@ int main() {
         cout << "Number and Severity of Accidents in the U.S." << endl;
         cout << "1. Input a state and get the average severity" << endl;
         cout << "2. Print Weighted Adjacency List" << endl;
-        cout << "3. Find traffic cases within a state" << endl;
+        cout << "3. Find traffic data within a state" << endl;
         cout << "0. Exit" << endl;
         cout << "Enter choice:";
 
