@@ -2,6 +2,7 @@
 #include <vector>
 #include <map>
 #include <fstream>
+#include <string>
 #include "Graph.h"
 using namespace std;
 vector<Entry> loadFileData(ifstream& dataset, Graph &graph) {
@@ -13,7 +14,7 @@ vector<Entry> loadFileData(ifstream& dataset, Graph &graph) {
     //state -> # of cases
     map<string,int> state_count;
     //go through whole dataset and pick at most max_cases cases from each state
-    int max_cases = 250;
+    int max_cases = INT_MAX;
     while (getline(dataset, row)) {
         Entry entry(row);
         if (state_count.find(entry.state) == state_count.end()) {

@@ -1,5 +1,6 @@
 #include "Graph.h"
 #include <sstream>
+
 //parameterized constructor parses a line from the database and stores the data in member variables
 Entry::Entry(string line){
     istringstream iss(line);

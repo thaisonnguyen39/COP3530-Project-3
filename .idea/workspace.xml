@@ -7,7 +7,6 @@
     <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
     <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
-    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
   </component>
   <component name="CMakePresetLoader">{
   &quot;useNewFormat&quot;: true
@@ -29,18 +28,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb635b45-a51b-4f5c-87b5-0fa6a06d47ba" name="Changes" comment="Added method to help test loading the dataset">
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+    <list default="true" id="bb635b45-a51b-4f5c-87b5-0fa6a06d47ba" name="Changes" comment="Touched up menus and removed some extraneous code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Graph.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Graph.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Graph.h" beforeDir="false" afterPath="$PROJECT_DIR$/Graph.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-05c81b07ea6be0b4576e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2025-08-02T23-49-44-0355.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/COP3530_Project_3.dir/Graph.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/COP3530_Project_3.dir/Graph.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/COP3530_Project_3.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/COP3530_Project_3.dir/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/COP3530_Project_3.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/COP3530_Project_3.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
@@ -404,6 +400,10 @@
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/CLionProjects/COP3530-Project-3/Graph.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/CLionProjects/COP3530-Project-3/Graph.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/CLionProjects/COP3530-Project-3/main.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/CLionProjects/COP3530-Project-3/main.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -431,6 +431,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "F:/CLionProjects/COP3530-Project-3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -451,11 +452,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -466,7 +462,8 @@
       <option name="presentableId" value="Default" />
       <updated>1754178547700</updated>
       <workItem from="1754178548988" duration="6480000" />
-      <workItem from="1754262372057" duration="40375000" />
+      <workItem from="1754262372057" duration="49084000" />
+      <workItem from="1754316408818" duration="6324000" />
     </task>
     <task id="LOCAL-00001" summary="Added struct to parse data and CMAKE functionality">
       <option name="closed" value="true" />
@@ -476,7 +473,31 @@
       <option name="project" value="LOCAL" />
       <updated>1754180359623</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added method to help test loading the dataset">
+      <option name="closed" value="true" />
+      <created>1754306044676</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1754306044676</updated>
+    </task>
+    <task id="LOCAL-00003" summary="-Implemented Edge List and state case data functionality&#10;-Cleaned up menus a little bit">
+      <option name="closed" value="true" />
+      <created>1754306624450</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1754306624450</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Touched up menus and removed some extraneous code">
+      <option name="closed" value="true" />
+      <created>1754315088227</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1754315088227</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,7 +533,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added struct to parse data and CMAKE functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added struct to parse data and CMAKE functionality" />
+    <MESSAGE value="Added method to help test loading the dataset" />
+    <MESSAGE value="-Implemented Edge List and state case data functionality&#10;-Cleaned up menus a little bit" />
+    <MESSAGE value="Touched up menus and removed some extraneous code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Touched up menus and removed some extraneous code" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

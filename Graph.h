@@ -4,6 +4,7 @@
 #include <cmath>
 #include <fstream>
 #pragma once
+#define INT_MAX 2147483647
 using namespace std;
 
 //Stores relevant data from each entry
