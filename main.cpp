@@ -2,11 +2,10 @@
 #include <vector>
 #include <map>
 #include <fstream>
-#include <sstream>
 #include "Graph.h"
 using namespace std;
-
-vector<Entry> testLoad(ifstream& dataset) {
+vector<Entry> loadFileData(ifstream& dataset, Graph &graph) {
+    cout << "Loading database..." << endl;
     vector<Entry> data;
     string row;
     //skip header
@@ -14,42 +13,38 @@ vector<Entry> testLoad(ifstream& dataset) {
     //state -> # of cases
     map<string,int> state_count;
     //go through whole dataset and pick at most 2200 cases from each state
+    int max_cases = 2500;
     while (getline(dataset, row)) {
         Entry entry(row);
-        int max_cases = 2200;
         if (state_count.find(entry.state) == state_count.end()) {
             state_count[entry.state] = 1;
+            graph.insertTable(entry);
             data.push_back(entry);
         }
         else if (state_count[entry.state] < max_cases) {
             state_count[entry.state]++;
+            graph.insertTable(entry);
             data.push_back(entry);
         }
     }
     //return vector of entries
+    cout << "Database loaded." << endl;
     return data;
 }
-
 int main() {
+    int cow;;
     //open dataset (i haven't pushed it yet but it would be in this directory if it was pushed)
     ifstream dataset("archive/US_Accidents_March23.csv");
     if (!dataset) {
-        cout << "Error opening file" << endl;
+        cout << "Error opening file." << endl;
         return 2;
     }
+    cout << "File opened." << endl;
 
-    // reads the header and prints it
-    string row;
-    //skip header
-    getline(dataset, row);
-    //first line
-    getline(dataset, row);
-    Entry entry1 = Entry(row);
-    // entry1.printData();
-
+    Graph graph;
     map<string, pair<int, int>> stateInfo;
     map<string, map<string, pair<int, int>>> adjList;
-    vector<Entry> entries = testLoad(dataset);
+    vector<Entry> entries = loadFileData(dataset, graph);
     
     // Get the total severity and entry count for each state
     for (const auto& entry : entries) {
@@ -83,15 +78,24 @@ int main() {
         cout << "Number and Severity of Accidents in the U.S." << endl;
         cout << "1. Input a state and get the average severity" << endl;
         cout << "2. Print Weighted Adjacency List" << endl;
-        cout << "3. Option 3" << endl;
+        cout << "3. Find traffic cases within a state" << endl;
         cout << "0. Exit" << endl;
-        cout << "Enter choice: ";
-        cin >> option;
+        cout << "Enter choice:";
+
+        string input;
+        cin >> input;
+        try {
+            option = stoi(input);
+        }
+        catch (std::invalid_argument& e) {
+            cout << "Invalid option. Try again." << endl << endl;
+            continue;
+        }
 
         // User inputs state abbreviation and gets the average severity
         if (option == 1) {
             string state;
-            cout << "Enter state abbreviation (e.g, NY, TX): ";
+            cout << "Enter state abbreviation (e.g, NY, TX):";
             cin >> state;
             if (stateInfo.find(state) != stateInfo.end()) {
                 double avgSeverity = static_cast<double>(stateInfo[state].first) / stateInfo[state].second;
@@ -113,6 +117,9 @@ int main() {
                 }
                 cout << endl;
             }
+        }
+        else if (option == 3) {
+            graph.startMenu();
         }
         else if (option == 0) {
             cout << "Exiting program." << endl;
